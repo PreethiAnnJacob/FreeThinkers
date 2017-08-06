@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+              
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Login | FreeThinkers </title>
+
+        <style>
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+</style>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+
+    </head>
+
+    <body onload="myFunction()" style="margin:0;">
+
+			<div id="loader"></div>
+
+			<div style="display:none;" id="myDiv" class="animate-bottom">
+
+        <!-- Top content -->
+        <div class="top-content" id="body"> 	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>FreeThinkers</strong></h1>
+                            <h1> Login Form</h1>
+                            <div class="description">
+                            	<p>Helping you to discover yourself...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>Login to our site</h3>
+                            		<p>Enter your username and password to log on:</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-key"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+                                <div class="login-form">
+			                    	<div class="form-group">
+                                        <p id="loginmessage"><font color="red">All the fields are required.</font></p>
+			                    		<label class="sr-only" for="form-username">Username</label>
+			                        	<input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username" required>
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="form-password">Password</label>
+			                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password" required>
+			                        </div>
+                                    <button onclick="loginfunction()" id="loginbutton"  class="btn" > Sign in! </button>
+			                    </div>
+                                <div class="form-bottom-left">
+                                    <p> <h3> No account ? <a href="/signup"> Create your account </a>   </h3> </p>
+                                </div>
+		                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        </div>
+        <footer>
+            <p align="center" class="copyright text-muted">Webapp created by Preethi Ann Jacob & Powered by Hasura</p>
+        </footer>
+
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        <script>
+        	var myVar;
+
+				function myFunction() {
+    					myVar = setTimeout(showPage, 3000);
+					}
+
+				function showPage() {
+  						document.getElementById("loader").style.display = "none";
+  						document.getElementById("myDiv").style.display = "block";
+					}
+        </script>
+        <script>
+        var user_id;
+        var auth_token;
+        
+        // LOGIN
+       $(document).ready(function()
+        {   
+
+            //CHECK IF ALREADY LOGGED IN  USER
+            console.log(document.cookie);
+            window.getCookie = function(name) 
+            {
+                match = document.cookie.match(new RegExp(name + '=([^;]+)'));
+                //console.log(match);
+                if (match) return match[1];
+            }
+         
+            var user_id=parseInt(window.getCookie("user_id"));
+            var username=window.getCookie("username");
+            var auth_token=window.getCookie("auth_token");
+            var post_id=parseInt(window.getCookie("post_id"));
+            console.log(user_id);
+            console.log(username);
+            console.log(auth_token);
+            console.log(post_id);
+            if(username!==undefined)
+            {	console.log("I am defined");
+                location.href="/home";
+            }
+
+            else{
+            	console.log("I am undefined");
+            //Saving cookies for username and userid
+        	console.log(document.cookie);
+
+        	//FUNCTION TO CHECK IF USER DETAILS ALREADY PRESENT IN THE 'USERS' TABLE
+        function checkuser()
+        {
+            var request= new XMLHttpRequest();
+            request.onreadystatechange=function()
+            {
+                if(request.readyState===XMLHttpRequest.DONE)
+                {
+                    if(request.status===200) 
+                    { 
+                        console.log(this.responseText);
+                        console.log(this.responseText=="[]");
+                        if((this.responseText)=="[]")
+                                   insertuser();
+                        else{
+                            location.href="/home";
+                        }
+                    }
+                    else 
+                    { 
+                        var err=JSON.parse(this.responseText);
+                        if(err.message=='Incorrect credentials. Please try again.')
+                                    alert('Incorrect credentials!');
+                    }
+                }               
+            }     
+            request.open('POST', "https://data.predawn45.hasura-app.io/v1/query", true);
+            request.setRequestHeader('Content-type','application/json');
+            request.withCredentials=true;
+            request.setRequestHeader('Authorization','Bearer '+ auth_token);
+            request.send(JSON.stringify({   type:"select",
+                                            args:{  table:"users",
+                                                    columns:["username"],
+                                                    where:{"user_id":user_id}
+                                                 }
+                                        })
+                        );  
+        }   
+
+        //FUNCTION TO INSERT HASURA_ID AND USERNAME--EXECUTES ONLY ONCE
+        insertuser= function()
+        {
+                    var username=document.getElementById("form-username").value;
+                    var request= new XMLHttpRequest();
+                    request.onreadystatechange=function()
+                    {
+                          if(request.readyState===XMLHttpRequest.DONE)
+                          {
+                             if(request.status===200) 
+                              { 
+                                console.log("inserted user");
+                                location.href="/home";
+                                
+                              }
+                              else 
+                              { 
+                                console.log(this.responseText);
+                              }
+                         }               
+                    }     
+                    request.open('POST', "https://data.predawn45.hasura-app.io/v1/query", true);
+                    request.setRequestHeader('Content-type','application/json');
+                    request.setRequestHeader('Authorization','Bearer '+ auth_token);
+                    request.withCredentials=true;
+                    request.send(JSON.stringify({   type:"insert",
+                                                    args:  {
+                                                                table:"users",
+                                                                objects:[{"user_id":user_id,"username":username}]
+                                                            }
+                                                })
+                                );
+        } 
+
+
+            var loginbutton = document.getElementById("loginbutton");
+            loginbutton.onclick= function()
+            {	
+                var request= new XMLHttpRequest();
+                var username;
+                //myFunction();
+                request.onreadystatechange=function()
+                {
+                        if(request.readyState===XMLHttpRequest.DONE)
+                        {
+                             if(request.status===200) 
+                              { 
+                                user_id=JSON.parse(this.responseText).hasura_id;
+                                username=document.getElementById("form-username").value;
+                                auth_token=JSON.parse(this.responseText).auth_token; 
+                                document.cookie='user_id='+user_id;
+                                document.cookie='username='+username;
+                                document.cookie='auth_token='+auth_token;
+                                console.log(document.cookie);
+                                checkuser();
+                                alert("Hello! "+username);
+                                
+                              }
+                              else 
+                              { 
+                                console.log(this.responseText);
+                                document.getElementById("loginbutton").innerHTML="Sign in!";
+                                alert("Invalid username/password!");
+                              }
+                        }               
+                } 
+
+                var username= document.getElementById("form-username").value;
+                var password= document.getElementById("form-password").value;
+                request.open('POST', "https://auth.predawn45.hasura-app.io/login", true);
+                request.setRequestHeader('Content-type','application/json');
+                request.send(JSON.stringify({username : username,password : password})); 
+                document.getElementById("loginbutton").innerHTML="Signing in...Please wait...";
+                myFunction();
+
+            }
+        }
+        });
+
+        
+    </script>
+    </body>
+
+</html>

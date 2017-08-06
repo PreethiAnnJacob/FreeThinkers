@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Signup | FreeThinkers </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style>
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+</style>
+
+        <!--CSS-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+
+    </head>
+
+    <body onload="myFunction()" style="margin:0;">
+
+            <div id="loader"></div>
+
+            <div style="display:none;" id="myDiv" class="animate-bottom">
+
+        <!-- Top content -->
+        <div class="top-content">
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text" >
+                            <h1><strong>FreeThinkers</strong></h1>
+                            <div><h1> Sign up form</h1></div>
+                            <div class="description">
+                                <p>Helping you to discover yourself...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="message">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3> Create your account in our site</h3>
+                                    <p>Enter your username and password to create your account:</p>
+                                </div>
+                                <div class="form-top-right">
+                                    <i class="fa fa-key"></i>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <div class="login-form">                                
+                                    <div class="form-group">
+                                        <p id="signupmessage"><font color="red">All the fields are required.</font></p>
+                                        <label class="sr-only" for="form-username">Username</label>
+                                        <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-password">Password</label>
+                                        <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-password">Repeat your Password</label>
+                                        <input type="password" name="form-password" placeholder="Repeat your Password..." class="form-password form-control" id="repeat-password" required>
+                                    </div>
+                                    <button onclick="signupfunction()" id="signupbutton"  class="btn" > Create account! </button>
+                                </div>
+                                <div class="form-bottom-left">
+                                    <p> <h3> Already registered user? <a href="/login"> Login to your account </a> </h3> </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+        </div>
+        <footer>
+            <p align="center" class="copyright text-muted">Webapp created by Preethi Ann Jacob & Powered by Hasura</p>
+        </footer>
+
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        <script>
+            var myVar;
+
+                function myFunction() {
+                        myVar = setTimeout(showPage, 3000);
+                    }
+
+                function showPage() {
+                        document.getElementById("loader").style.display = "none";
+                        document.getElementById("myDiv").style.display = "block";
+                    }
+        </script>
+        <script>
+                   
+            $(document).ready(function()
+            {
+                var signupbutton = document.getElementById("signupbutton");
+                signupbutton.onclick= function()
+                {
+                    var request= new XMLHttpRequest();
+                    request.onreadystatechange=function()
+                    {
+                          if(request.readyState===XMLHttpRequest.DONE)
+                          {
+                             if(request.status===200) 
+                              {     
+                                    alert("Welcome to FreeThinkers family!\nShare your thoughts. Get opinions. Discover yourself!!!\n Please login using your credentials");
+                                    location.href = "/login";
+                              }
+                              else 
+                              {     
+                                    console.log("request status:"+request.status)
+                                    console.log(this.responseText);
+                                    var err=JSON.parse(this.responseText);
+                                    if(err.code==="user-already-exists")
+                                        alert("This username already exists. Please choose a different username.");
+                                    else if(err.message==="Password too short")
+                                        alert("Your password should have at least 8 characters.");
+                                    document.getElementById("signupbutton").innerHTML="Create account!"
+                                
+                              }
+                          }               
+                    } 
+                    myFunction();    
+                    var username= document.getElementById("form-username").value;
+                    var password= document.getElementById("form-password").value;
+                    var repeat_password= document.getElementById("repeat-password").value;
+                    if (!password.match(repeat_password)) 
+                    {
+                            alert("Password mismatch error");
+                            return;
+                    }
+                    request.open('POST', "https://auth.predawn45.hasura-app.io/signup", true);
+                    request.setRequestHeader('Content-type','application/json');
+                    console.log(JSON.stringify({username : username,password : password}));
+                    request.send(JSON.stringify({username : username,password : password})); 
+                    document.getElementById("signupbutton").innerHTML="Creating your account...Please wait";
+                
+                } 
+    
+            });    
+   
+        </script>
+    </body>
+</html> 

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Write post | FreeThinkers</title>
+ 
+    <style>
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+</style>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+</head>
+
+<body onload="myFunction()" style="margin:0;">
+
+            <div id="loader"></div>
+
+            <div style="display:none;" id="myDiv" class="animate-bottom">
+       <style>
+            #logout>button:hover,#logout>button:link {
+                    text-decoration: none; 
+                        }
+    </style>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/home">
+                    <div id="image" style="display:inline;">
+                        <img src="assets/ico/favicon.png">
+                    </div>
+                    <div id="texts" style="display:inline; white-space:nowrap;">FreeThinkers</div>
+                    <div id="usertag" style="display:inline; white-space:nowrap;"></div>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/writepost">Write</a>
+                    </li>
+                    <li>
+                        <button class="btn btn-link" id="logout"><a>Logout</a></button>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Write  a new post</h1>
+                        <h2 class="subheading">Explore the undercurrents of the mysteries within you</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <input type="text" name="post_title" placeholder="Write your post title here(Required)" class="form-control" id="post_title" required>
+                    <p>                                                             </p>
+                    <input type="text"  name="post_caption" placeholder="Write your post caption here(if any)" class="form-control" id="post_caption" >
+                    <p>                                                             </p>
+                    <textarea rows=20 name="post_content" placeholder="Write the post content here(Required)" class=" form-control" id="post_content" required></textarea>
+                    <p></p>
+                    <button onclick="writefunction()" id="submitwrite"  class="btn" > Create post! </button>
+                </div>
+            </div>
+        </div>
+    </article>
+    </div>
+
+     <footer>
+            <p align="center" class="copyright text-muted">Created by Preethi Ann Jacob & Powered by Hasura</p>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+    <script>
+            var myVar;
+
+                function myFunction() {
+                        myVar = setTimeout(showPage, 3000);
+                    }
+
+                function showPage() {
+                        document.getElementById("loader").style.display = "none";
+                        document.getElementById("myDiv").style.display = "block";
+                    }
+        </script>
+    <script>
+
+        //USING COOKIES TO GET STORED USER_ID AND AUTH_TOKEN
+        console.log(document.cookie);
+        window.getCookie = function(name) 
+        {
+             match = document.cookie.match(new RegExp(name + '=([^;]+)'));
+             //console.log(match);
+             if (match) return match[1];
+        }
+         
+        var user_id=parseInt(window.getCookie("user_id"));
+        var username=window.getCookie("username");
+        var auth_token=window.getCookie("auth_token");
+        console.log(user_id);
+        console.log(auth_token);
+        console.log(username);
+
+        if(username===undefined)
+            {
+                location.href="/";
+            }
+            else{
+
+        document.getElementById("usertag").innerHTML='@'+username;
+
+        function writefunction()
+        {   var post_title= document.getElementById("post_title").value;
+            var post_content= document.getElementById("post_content").value;
+            var post_caption= document.getElementById("post_caption").value; 
+            var check1=0;
+            for (var i=0;i<post_title.length;i++)
+            {   var ch=post_title[i];
+                if(!(ch===''||ch===' '||ch==='\n'))
+                    {check1=1;break;}
+            }
+            var check2=0;
+                for (var i=0;i<post_content.length;i++)
+                {   var ch=post_content[i];
+                    if(!(ch===''||ch===' '||ch==='\n'))
+                        {check2=1;break;}
+                }
+            if (check1===0&&check2===0)
+               alert("Post-title and post-content are required");
+            else if (check1===0)
+                  alert("Post_title is required");  
+           else if (check2===0)
+                  alert("Post_content is required");
+            else{
+            var request= new XMLHttpRequest();
+            request.onreadystatechange=function()
+            {
+                if(request.readyState===XMLHttpRequest.DONE)
+                {
+                    if(request.status===200) 
+                    {  
+                        //TO GET INTEGER POST_ID FROM STRING RESPONSETEXT:"{"affected_rows":1,"returning":[{"post_id":40}]}"
+                        //HINT: {}REPRESENT OBJECT,[]REPRESENT ARRAY
+                        var obj=JSON.parse(this.responseText);
+                        var post_id=obj.returning[0].post_id;
+                        console.log("Post_id:    "+post_id); 
+
+                        //SET COOKIES FOR POST_ID
+                        document.cookie='post_id='+post_id;
+                        console.log(document.cookie);
+
+                        alert("Great! Posted successfully!");
+                        location.href="/singlepost";
+                    }
+                    else 
+                    { 
+                        var err=JSON.parse(this.responseText);
+                        alert("Error : "+err.message);
+                        document.getElementById("submitwrite").innerHTML="Creating new post...";
+                    }
+                }               
+            }     
+            request.open('POST', "https://data.predawn45.hasura-app.io/v1/query", true);
+            request.setRequestHeader('Content-type','application/json');
+            request.withCredentials=true;
+            request.setRequestHeader('Authorization','Bearer '+ auth_token);
+            request.send(JSON.stringify({   type:"insert",
+                                            args:{  table:"posts",
+                                                    objects:[{  "post_title" : post_title, 
+                                                                "post_content" : post_content, 
+                                                                "post_caption" : post_caption, 
+                                                                "user_id" : user_id}],
+                                                    returning: ["post_id"]
+                                                 }
+                                        })
+                        ); 
+            document.getElementById("submitwrite").innerHTML="Creating new post...";
+        }
+
+        }
+
+        document.getElementById("logout").onclick=function()
+            {
+                var request= new XMLHttpRequest();
+                request.onreadystatechange=function()
+                {
+                            if(request.readyState===XMLHttpRequest.DONE)
+                            {
+                                if(request.status===200) 
+                                {   alert("Logged out successfully!See you "+username+"!")
+                                    window.location="/";
+                                    console.log(this.responseText); 
+                                    console.log(document.cookie);
+                                }
+                                else 
+                                { 
+                                    alert("Network error");
+                                }
+                            }               
+                }    
+                document.cookie = "user_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "auth_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "post_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                request.open('POST',"https://auth.predawn45.hasura-app.io/user/logout ", true);
+                request.setRequestHeader('Authorization','Bearer '+ auth_token);
+                request.withCredentials=true;
+                request.send(null);
+            };
+        }
+    </script>
+
+
+</body>
+
+</html>

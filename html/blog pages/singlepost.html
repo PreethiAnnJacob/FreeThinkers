@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Home page">
+        <meta name="author" content="Preethi Ann Jacob">
+        <title>Read | FreeThinkers</title>
+
+<style>
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+</style>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Theme CSS -->
+        <link href="css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+
+    </head>
+    <body  onload="myFunction()" >
+
+            <div id="loader"></div>
+
+            <div style="display:none;" id="myDiv" class="animate-bottom">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/home">
+                    <div id="image" style="display:inline;">
+                        <img src="assets/ico/favicon.png">
+                    </div>
+                    <div id="texts" style="display:inline; white-space:nowrap;">FreeThinkers</div>
+                    <div id="usertag" style="display:inline; white-space:nowrap;"></div>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/writepost">Write</a>
+                    </li>
+                    <li>
+                        <button class="btn btn-link" id="logout"><a>Logout</a></button>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/about-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1 id="post_title"></h1>
+                        <hr class="small">
+                        <span class="subheading" id="post_caption"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div id="published"></div>
+                <p></p>
+                <div id="post_content"></div>
+                <p></p>
+                <p></p>
+                <hr>
+                <p></p>
+                <p></p>
+                <button type="button" id="likebutton" class="btn"><i class="fa fa-thumbs-up" style="font-size:48px;color:#9c9da3"></i></button>
+                <button type="button" id="liked" class="btn"><i class="fa fa-thumbs-up" style="font-size:48px;color:blue"></i></button>
+                <div id="likes"></div>
+                <br><br>
+                <hr>
+                <textarea rows=5 name="comment" placeholder="Leave a reply here" class=" form-control" id="comment"></textarea><br>
+                <button type="button" id="newComment" onclick="newComment()">Submit your reply</button>
+                <br><br>
+                <p id="readcomments"></p>
+                <br><br>
+                <div id="nomoreoldercomments" style="display:inline;"></div>
+                        <p style="display:inline; white-space:nowrap;"></p>
+                        <button class="button" id="oldercomments" style="display:inline; white-space:nowrap;">&larr; Older Comments </button>
+                        <p style="display:inline; white-space:nowrap;"></p>
+                        <button class="button" id="newercomments" style="display:inline; white-space:nowrap;">Newer Comments &rarr;</button>
+                        <p style="display:inline; white-space:nowrap;"></p>
+                        <div id="nomorenewercomments" style="display:inline; white-space:nowrap;"></div>
+                <div id="nomore"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+            var myVar;
+
+                function myFunction() {
+                        myVar = setTimeout(showPage, 3000);
+                    }
+
+                function showPage() {
+                        document.getElementById("loader").style.display = "none";
+                        document.getElementById("myDiv").style.display = "block";
+                    }
+        </script>
+
+    <hr>
+
+    <!-- Footer -->
+   <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright text-muted">Webapp created by Preethi Ann Jacob & Powered by Hasura</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+
+    <script>
+        $(document).ready(function()
+        {
+            //USING COOKIES TO GET STORED USER_ID AND AUTH_TOKEN AND POST_ID
+            console.log(document.cookie);
+
+            //FOR COMMENTS SETUP
+            var offset_times=0;
+            var limit=5;
+            var offset=0;
+            var count;
+            //FOR LIKE SETUP
+            var like_count=0;
+            document.getElementById("liked").style.display = "none";
+            document.getElementById("likebutton").style.display = "none";
+            window.getCookie = function(name) 
+            {
+                match = document.cookie.match(new RegExp(name + '=([^;]+)'));
+                if (match) return match[1];
+            }
+         
+            var user_id=parseInt(window.getCookie("user_id"));
+            var username=window.getCookie("username");
+            var auth_token=window.getCookie("auth_token");
+            var post_id=parseInt(window.getCookie("post_id"));
+            console.log(user_id);
+            console.log(username);
+            console.log(auth_token);
+            console.log(post_id);
+
+             if(username===undefined)
+            {
+                location.href="/";
+            }
+            else{
+
+            document.getElementById("usertag").innerHTML='@'+username;
+
+
+                        //FOR LIKE_COUNT
+                        var request4 = new XMLHttpRequest();
+                        var like_count;
+                        request4.onreadystatechange=function()
+                        {
+                            if(request4.readyState===XMLHttpRequest.DONE)
+                            {
+                                if(request4.status===200) 
+                                {       console.log(this.responseText);
+                                        var a=this.responseText;
+                                        console.log(a);
+                                        var b=a.substring(1,a.length-1);
+                                        console.log(b);
+                                        like_count=(JSON.parse(b).like_count);
+                                        console.log(like_count);
+                                        
+                                }
+                                else
+                                {       console.log(this.responseText);
+                                        alert ("Error");
+                                }
+                            }
+                        }
+                        request4.open('POST', "https://data.predawn45.hasura-app.io/v1/query", true);
+                        request4.setRequestHeader('Content-type','application/json');
+                        request4.withCredentials=true;
+                        request4.setRequestHeader('Authorization','Bearer '+ auth_token);
+                        request4.send(JSON.stringify({      type : "select",
+                                                            args: {
+                                                                    table : "post_like_count",
+                                                                    columns:["like_count"],
+                                                                    where: {"post_id":post_id}
+                                                                  }
+                                                    })
+                                    ); 
+            
+
+
+            //CHECK IF LIKED POST OR NOT
+            var request6= new XMLHttpRequest();
+            request6.onreadystatechange=function()
+            {
+                if(request6.readyState===XMLHttpRequest.DONE)
+                {
+                    if(request6.status===200) 
+                    {   if(this.response==="[]") 
+                        {   
+                            document.getElementById("likebutton").style.display = "block";
+                            document.getElementById("liked").style.display = "none";
+
+                        }
+                        else
+                        {   document.getElementById("likebutton").style.display = "none";
+                            document.getElementById("liked").style.display = "block";
+
+                        }
+                    }
+                    else 
+                    { 
+                        console.log("Error: "+(this.responseText));
+                        alert('Error!Please try again!');
+                    }
+                }               
+            }     
+            request6.open('POST', "https://data.predawn45.hasura-app.io/v1/query", true);
+            request6.setRequestHeader('Content-type','application/json');
+            request6.withCredentials=true;
+            request6.setRequestHeader('Authorization','Bearer '+ auth_token);
+            request6.send(JSON.stringify({   type:"select",
+                                            args:{  table:"likes",
+                                                    columns:   [    "user_id"
+                                                                    
+                                                                ],
+                                                    where:{"post_id": post_id,"user_id":user_id}
+                                                 }
+                                        })
+                        );  
+
+            var liked = document.getElementById("liked");
+            liked.onclick= function()
+            {       alert("You've already liked it!");
+            } 
+
+
+            
+            //FETCHING DATA FOR POSTS FROM POSTS TABLE
+            var request= new XMLHttpRequest();
+            request.onreadystatechange=function()
+            {
+                if(request.readyState===XMLHttpRequest.DONE)
+                {
+                    if(request.status===200) 
+                    {   
+                        //FETCHING POST DETAILS FROM RESPONSETEXT: "[{"post_title":"Happy days","post_caption":"Live alive","post_content":"saenjj","user_id":2,"created_on":"2017-07-28T14:26:12.116109+00:00"}] "
+                        //console.log("this.responseText:   "+this.responseText);
+                        var a=this.responseText;
+                        var b=a.substring(1,a.length-1);
+                        //console.log("b= "+b);
+                        var c=JSON.parse(b);
+                        //console.log("c="+c);
+                        var e=c.post_content;
+                        var post_content = '<p>';
+                        for(var j=0;j<e.length;j++)
+                        {   
+                            if(e[j]==='\n')
+                            {
+                                post_content=post_content+'</p>';
+                            }
+                            else
+                            {
+                                post_content=post_content+e[j];
+                            }
+                        }
+                        //console.log("post_title:  "+post_title);
+                        var post_caption=c.post_caption;
+                        //console.log("post_caption:  "+post_caption);
+                        var post_title=c.post_title;
+                        //console.log("post_content:  "+post_content);
+                        var author=c.gud.username;
+                        //console.log("author:  "+author);
+                        var d=c.created_on;
+                        var i;
+                        for(i=0;i<d.length;i++)
+                        {
+                            if(d[i]==='T') break;
+                        }
+                        var created_on=d.substring(0,i);
+                        //console.log("created_on:  "+created_on);
+
+                        //IF POST DETAILS ARE READY TAKE COMMENT DETAILS FROM COMMENTS TABLE
+                         //FOR COMMENTS SETUP
+                        offset_times=0;
+                        limit=5;
+                        offset=0;
+                        commentsread();
+                        console.log(like_count+" likes");
+                        document.getElementById("likes").innerHTML=like_count+' likes';
+                        console.log("I'm in");
+                        
+
+                        //FILL YOUR PAGE WITH DATA
+                        document.getElementById("post_title").innerHTML=post_title;
+                        document.getElementById("post_caption").innerHTML=post_caption;
+                        document.getElementById("post_content").innerHTML=post_content;
+                        document.getElementById("published").innerHTML='<small><i><span style = align: "center">'+'Published on '+'<b>'+created_on+'</b>'+' by '+'<b>'+author+'</b></span></i></small>';
+                        
+
+
+                        
+                    }
+                    else 
+                    { 
+                        //var err=JSON.parse(this.responseText);
+                        console.log("Error: "+(this.responseText));
+                        alert('Error!Please try again!');
+                    }
+                }               
+            }     
+            request.open('POST', "https://data.predawn45.hasura-app.io/v1/query", true);
+            request.setRequestHeader('Content-type','application/json');
+            request.withCredentials=true;
+            request.setRequestHeader('Authorization','Bearer '+ auth_token);
+            request.send(JSON.stringify({   type:"select",
+                                            args:{  table:"posts",
+                                                    columns:   [    "post_title",
+                                                                    "post_caption",
+                                                                    "post_content",
+                                                                    "created_on",
+                                                                    {   "name": "gud",
+                                                                        "columns": ["username"]
+                                                                    }
+                                                                ],
+                                                    where:{"post_id": post_id}
+                                                 }
+                                        })
+                        );
+
+            //FUNCTION TO GET COMMENT DETAILS
+            function commentsread()
+            {           console.log("Hey I'm here");
+                        var request2= new XMLHttpRequest();
+                        request2.onreadystatechange=function()
+                        {
+                            if(request2.readyState===XMLHttpRequest.DONE)
+                            {
+                                if(request2.status===200) 
+                                {   /*FETCHING COMMENT DETAILS FROM RESPONSETEXT: 
+                                                "[
+                                                    {
+                                                        "comment_text": "fantastic",
+                                                        "created_on": "2017-07-28T20:05:33.07849+00:00",
+                                                        "better": {
+                                                                        "username": "nila"
+                                                                 }
+                                                    },
+                                                    {
+                                                            "comment_text": "wonderful",
+                                                            "created_on": "2017-07-28T20:05:48.382956+00:00",
+                                                            "better": {
+                                                                             "username": "kizar"
+                                                                        }
+                                                    }
+                                                ]"*/
+                                    str="";
+                                    document.getElementById("nomorenewercomments").innerHTML='';
+                                    document.getElementById("newercomments").style.display = "block";
+                                    document.getElementById("nomoreoldercomments").innerHTML='';
+                                    document.getElementById("oldercomments").style.display = "block";
+                                    
+                                    console.log("this.responseText:   "+this.responseText);
+                                    var a=this.responseText;
+                                    if (a==="[]")
+                                    {       document.getElementById("nomoreoldercomments").innerHTML='No more older comments';
+                                            document.getElementById("oldercomments").style.display = "none";
+                                    }
+                                    else{
+                                    var b=a.substring(1,a.length-1);
+                                    console.log("b= "+b);
+                                    var m=0;count=0;
+                                    for(var i=0;i<b.length;i++)
+                                    {   if(b[i]==='}' && b[i-1]==='}')
+                                        {   var c=b.substring(m,i+1);
+                                            console.log("c="+c);
+                                            m=i+2;
+                                            var d=JSON.parse(c);
+                                            console.log("d="+d);
+                                            var comment_text=d.comment_text;
+                                            console.log("comment_text:  "+comment_text);
+                                            var author=d.better.username;
+                                            console.log("author:  "+author);
+                                            var e=d.created_on;
+                                            var j;
+                                            for(j=0;j<e.length;j++)
+                                            {
+                                                if(e[j]==='T') break;
+                                            }
+                                            var created_on=e.substring(0,j);
+                                            console.log("created_on:  "+created_on);
+                                            str=str+'<b>'+author+' @ '+created_on+' </b><br><i>'+ comment_text+'</i><br><br>';
+                                            count++;
+                                            offset++;
+                                        }
+                                        
+                                    }
+                                    document.getElementById("readcomments").innerHTML=str;
+                                    offset_times++;
+                                    //offset=offset_times*limit;
+                                    console.log("offset_times="+offset_times);
+                                    console.log("offset="+offset);
+                                    }
+                                }
+                                else
+                                {   
+                                    console.log(this.responseText);
+                                    //alert("Error")
+                                }
+                            }
+                        }
+                        request2.open('POST', "https://data.predawn45.hasura-app.io/v1/query", true);
+                        request2.setRequestHeader('Content-type','application/json');
+                        request2.withCredentials=true;
+                        request2.setRequestHeader('Authorization','Bearer '+ auth_token);
+                        request2.send(JSON.stringify({      type:"select",
+                                                            args:{  table:"comments",
+                                                                    columns:   [    "comment_text",
+                                                                                    "created_on",
+                                                                                    {   "name": "better",
+                                                                                        "columns": ["username"]
+                                                                                    }
+                                                                                ],
+                                                                    where:{"post_id": post_id},
+                                                                    order_by :"-created_on",
+                                                                    limit: limit,
+                                                                    offset:offset
+                                                                }
+                                                    })
+                                        );
+
+            }
+
+
+
+            //TO GET OLDER COMMENTS
+            var oldercomments = document.getElementById("oldercomments");
+            oldercomments.onclick= function()
+            {
+                commentsread();
+            };
+
+            //FUNCTION TO GET NEWER COMMENTS
+            var newercomments = document.getElementById("newercomments");
+            newercomments.onclick= function()
+            {           if ((offset-(count+limit))<0)
+                            {       document.getElementById("nomorenewercomments").innerHTML='No more newer comments';
+                                    document.getElementById("newercomments").style.display = "none";
+                            }
+                        else{
+                        offset=offset-(count+limit);
+                        var request2= new XMLHttpRequest();
+                        request2.onreadystatechange=function()
+                        {
+                            if(request2.readyState===XMLHttpRequest.DONE)
+                            {
+                                if(request2.status===200) 
+                                {   /*FETCHING COMMENT DETAILS FROM RESPONSETEXT: 
+                                                "[
+                                                    {
+                                                        "comment_text": "fantastic",
+                                                        "created_on": "2017-07-28T20:05:33.07849+00:00",
+                                                        "better": {
+                                                                        "username": "nila"
+                                                                 }
+                                                    },
+                                                    {
+                                                            "comment_text": "wonderful",
+                                                            "created_on": "2017-07-28T20:05:48.382956+00:00",
+                                                            "better": {
+                                                                             "username": "kizar"
+                                                                        }
+                                                    }
+                                                ]"*/
+                                    str="";
+                                    document.getElementById("nomorenewercomments").innerHTML='';
+                                    document.getElementById("newercomments").style.display = "block";
+                                    document.getElementById("nomoreoldercomments").innerHTML='';
+                                    document.getElementById("oldercomments").style.display = "block";
+
+                                    console.log("this.responseText:   "+this.responseText);
+                                    var a=this.responseText;
+                                    if (a==="[]")
+                                    {       document.getElementById("nomorenewercomments").innerHTML='No more newer comments';
+                                            document.getElementById("newercomments").style.display = "none";
+                                    }
+                                    else{
+                                    var b=a.substring(1,a.length-1);
+                                    console.log("b= "+b);
+                                    var m=0;offset-=count;count=0;
+                                    for(var i=0;i<b.length;i++)
+                                    {   if(b[i]==='}' && b[i-1]==='}')
+                                        {   var c=b.substring(m,i+1);
+                                            console.log("c="+c);
+                                            m=i+2;
+                                            var d=JSON.parse(c);
+                                            console.log("d="+d);
+                                            var comment_text=d.comment_text;
+                                            console.log("comment_text:  "+comment_text);
+                                            var author=d.better.username;
+                                            console.log("author:  "+author);
+                                            var e=d.created_on;
+                                            var j;
+                                            for(j=0;j<e.length;j++)
+                                            {
+                                                if(e[j]==='T') break;
+                                            }
+                                            var created_on=e.substring(0,j);
+                                            console.log("created_on:  "+created_on);
+                                            str=str+'<b>'+author+' @ '+created_on+' </b><br><i>'+ comment_text+'</i><br><br>';
+                                            count++;offset++;
+                                        }
+
+                                    }
+                                    document.getElementById("readcomments").innerHTML=str;
+                                    offset_times--;
+                                    //offset=offset_times*limit;
+                                    console.log("offset_times="+offset_times);
+                                    console.log("offset="+offset);
+                                    }
+                                }
+                                else
+                                {   
+                                    console.log(this.responseText);
+                                    //alert("Error")
+                                }
+                            }
+                        }
+                        request2.open('POST', "https://data.predawn45.hasura-app.io/v1/query", true);
+                        request2.setRequestHeader('Content-type','application/json');
+                        request2.withCredentials=true;
+                        request2.setRequestHeader('Authorization','Bearer '+ auth_token);
+                        request2.send(JSON.stringify({      type:"select",
+                                                            args:{  table:"comments",
+                                                                    columns:   [    "comment_text",
+                                                                                    "created_on",
+                                                                                    {   "name": "better",
+                                                                                        "columns": ["username"]
+                                                                                    }
+                                                                                ],
+                                                                    where:{"post_id": post_id},
+                                                                    order_by :"-created_on",
+                                                                    limit: limit,
+                                                                    offset:offset
+                                                                }
+                                                    })
+                                        );
+                    }
+                    };
+
+            //NEW COMMENT : INSERTING TO TABLE AND THE PAGE
+            var newComment = document.getElementById("newComment");
+            newComment.onclick= function()
+            {           var comment_text = document.getElementById("comment").value;
+                        var request3= new XMLHttpRequest();
+                        request3.onreadystatechange=function()
+                        {
+                            if(request3.readyState===XMLHttpRequest.DONE)
+                            {
+                                if(request3.status===200) 
+                                {   console.log(this.responseText);
+                                    var a=JSON.parse(this.responseText).returning[0].created_on;
+                                    console.log(a);
+                                    var i;
+                                    for(i=0;i<a.length;i++)
+                                    {
+                                        if(a[i]==='T') break;
+                                    }
+                                    var created_on=a.substring(0,i);
+                                    console.log(created_on);
+                                    str= '<b>'+username+' @ '+created_on+' </b><br><i>'+ comment_text+'</i><br><br>'+str;
+                                    document.getElementById("readcomments").innerHTML=str;
+                                    document.getElementById("comment").value="";
+                                    count++;
+                                }
+                                else
+                                {   
+                                    console.log(this.responseText);
+                                    //alert("Error")
+                                }
+                            }
+                        }
+                        request3.open('POST', "https://data.predawn45.hasura-app.io/v1/query", true);
+                        request3.setRequestHeader('Content-type','application/json');
+                        request3.withCredentials=true;
+                        request3.setRequestHeader('Authorization','Bearer '+ auth_token);
+                        request3.send(JSON.stringify({   type:"insert",
+                                                         args:{  table:"comments",
+                                                                 objects:[{  "comment_text" : comment_text,  
+                                                                             "post_id" : post_id, 
+                                                                             "user_id" : user_id
+                                                                         }],
+                                                                returning: ["comment_id","created_on"]
+                                                            }
+                                                    })
+                                    );  
+            };  
+
+
+             //LIKES BUTTON AND COUNT
+            var likebutton = document.getElementById("likebutton");
+            likebutton.onclick= function()
+            {           //INSERTING LIKES TO TABLE
+                        var request5 = new XMLHttpRequest();
+                        request5.onreadystatechange=function()
+                        {
+                            if(request5.readyState===XMLHttpRequest.DONE)
+                            {
+                                if(request5.status===200) 
+                                {   
+                                    console.log(this.responseText);
+                                    //FOR LIKE_COUNT
+                                    var request4 = new XMLHttpRequest();
+                                    request4.onreadystatechange=function()
+                                    {
+                                        if(request4.readyState===XMLHttpRequest.DONE)
+                                        {
+                                            if(request4.status===200) 
+                                            {       console.log(this.responseText);
+                                                    var a=this.responseText;
+                                                    console.log(a);
+                                                    var b=a.substring(1,a.length-1);
+                                                    console.log(b);
+                                                    var c=JSON.parse(b);
+                                                    console.log(c);
+                                                    like_count=(c.like_count);
+                                                    console.log(like_count); 
+                                                    document.getElementById("likebutton").style.display='none';
+                                    document.getElementById("liked").style.display='block';
+                                    document.getElementById("likes").innerHTML=like_count+' likes';              
+                                            }
+                                            else
+                                            {       console.log(this.responseText);
+                                                    alert ("Error");
+                                            }
+                                        }
+                                    }
+                                    request4.open('POST', "https://data.predawn45.hasura-app.io/v1/query", true);
+                                    request4.setRequestHeader('Content-type','application/json');
+                                    request4.withCredentials=true;
+                                    request4.setRequestHeader('Authorization','Bearer '+ auth_token);
+                                    request4.send(JSON.stringify({      type : "select",
+                                                                        args: {
+                                                                                table : "post_like_count",
+                                                                                columns:["like_count"],
+                                                                                where: {"post_id":post_id}
+                                                                            }
+                                                                })
+                                                ); 
+                                    document.getElementById("likebutton").style.display='none';
+                                    document.getElementById("liked").style.display='block';
+                                    document.getElementById("likes").innerHTML=like_count+' likes';
+                                }
+                                else
+                                {  console.log(this.responseText);
+                                   // if (this.responseText==="{"path":"$.args","error":"Uniqueness violation. duplicate key value violates unique constraint \"likes_pkey\""}")
+                                        alert("You are allowed to like this post only once!");
+                                    alert(this.responseText);
+                                }
+                            }
+                        }
+                        request5.open('POST', "https://data.predawn45.hasura-app.io/v1/query", true);
+                        request5.setRequestHeader('Content-type','application/json');
+                        request5.withCredentials=true;
+                        request5.setRequestHeader('Authorization','Bearer '+ auth_token);
+                        request5.send(JSON.stringify({   type:"insert",
+                                                         args:   {  table:"likes",
+                                                                    objects:[{   
+                                                                                "post_id" : post_id, 
+                                                                                "user_id" : user_id
+                                                                         }],
+                                                                }
+                                                    })
+                                    );             
+            }
+
+            //LOGOUT
+            document.getElementById("logout").onclick=function()
+            {
+                var request= new XMLHttpRequest();
+                request.onreadystatechange=function()
+                {
+                            if(request.readyState===XMLHttpRequest.DONE)
+                            {
+                                if(request.status===200) 
+                                {   
+                                    alert("Logged out successfully!See you "+username+"!")
+                                    window.location="/";
+                                    
+                                }
+                                else 
+                                { 
+                                    alert("Network error");
+                                }
+                            }               
+                }    
+                document.cookie = "user_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "auth_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "post_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                request.open('POST',"https://auth.predawn45.hasura-app.io/user/logout ", true);
+                request.setRequestHeader('Authorization','Bearer '+ auth_token);
+                request.withCredentials=true;
+                request.send(null);
+            };
+        }
+    });
+
+
+
+
+    </script> 
+
+    
+
+
+</body>
+
+</html>

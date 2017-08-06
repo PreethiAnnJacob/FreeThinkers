@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Home page">
+        <meta name="author" content="Preethi Ann Jacob">
+        <title>Home page | FreeThinkers</title>
+
+<style>
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+</style>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Theme CSS -->
+        <link href="css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    </head>
+    <body onload="myFunction()" style="margin:0;">
+
+            <div id="loader"></div>
+
+            <div style="display:none;" id="myDiv" class="animate-bottom">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/home">
+                    <div id="image" style="display:inline;">
+                        <img src="assets/ico/favicon.png">
+                    </div>
+                    <div id="texts" style="display:inline; white-space:nowrap;">FreeThinkers</div>
+                    <div id="usertag" style="display:inline; white-space:nowrap;"></div>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/home">Home</a>
+                    </li>
+                    <!--<li>
+                        <a href="about.html"></a>
+                    </li>-->
+                    <li>
+                        <a href="/writepost">Write</a>
+                    </li>
+                    <li>
+                        <button class="btn btn-link" id="logout"><a>Logout</a></button>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>FreeThinkers</h1>
+                        <hr class="small">
+                        <span class="subheading">Helping you to discover yourself</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview" id="post1">              
+                        <h2 class="post-title" id="post_title1"></h2>
+                        <h4 class="post-subtitle" id=post_subtitle1></h4>
+                        <p class="post-meta" id="post-meta1"></p>
+                        <p id="post_content1"><p>
+                        <button id="read1"  class="btn" > Read more! </button>
+                </div>
+            
+                <div class="post-preview" id="post2">
+                    
+                        <h2 class="post-title" id="post_title2"></h2>
+                        <h4 class="post-subtitle" id=post_subtitle2></h4>
+                    
+                    <p class="post-meta" id="post-meta2"></p>
+                    <p id="post_content2"><p>
+                    <button id="read2"  class="btn" > Read more! </button>
+                </div>
+            
+                <div class="post-preview" id="post3">
+                    
+                        <h2 class="post-title" id="post_title3">
+                        </h2>
+                        <h4 class="post-subtitle" id=post_subtitle3>
+                        </h4>
+                    
+                    <p class="post-meta" id="post-meta3"></p>
+                    <p id="post_content3"><p>
+                    <button id="read3"  class="btn" > Read more! </button>
+                </div>
+    
+                <div class="post-preview" id="post4">
+                    
+                        <h2 class="post-title" id="post_title4">
+                        </h2>
+                        <h4 class="post-subtitle" id=post_subtitle4>
+                        </h4>
+                
+                    <p class="post-meta" id="post-meta4"></p>
+                    <p id="post_content4"><p>
+                    <button id="read4"  class="btn" > Read more! </button>
+                </div>
+    
+                <div class="post-preview" id="post5">
+    
+                        <h2 class="post-title" id="post_title5">
+                        </h2>
+                        <h4 class="post-subtitle" id=post_subtitle5>
+                        </h4>
+                
+                    <p class="post-meta" id="post-meta5"></p>
+                    <p id="post_content5"><p>
+                    <button id="read5"  class="btn" > Read more! </button>
+                </div>
+        
+                <div class="post-preview" id="post6">
+        
+                        <h2 class="post-title" id="post_title6">
+                        </h2>
+                        <h4 class="post-subtitle" id=post_subtitle6>
+                        </h4>
+            
+                    <p class="post-meta" id="post-meta6"></p>
+                    <p id="post_content6"><p>
+                    <button id="read6"  class="btn" > Read more! </button>
+                </div>
+        
+                <div class="post-preview" id="post7">
+                
+                        <h2 class="post-title" id="post_title7">
+                        </h2>
+                        <h4 class="post-subtitle" id=post_subtitle7>
+                        </h4>
+                
+                    <p class="post-meta" id="post-meta7"></p>
+                    <p id="post_content7"><p>
+                    <button id="read7"  class="btn" > Read more! </button>
+                </div>
+        
+                <div class="post-preview" id="post8">
+                
+                        <h2 class="post-title" id="post_title8">
+                        </h2>
+                        <h4 class="post-subtitle" id=post_subtitle8>
+                        </h4>
+                
+                    <p class="post-meta" id="post-meta8"></p>
+                    <p id="post_content8"><p>
+                    <button id="read8"  class="btn" > Read more! </button>
+                </div>
+            
+                <div class="post-preview" id="post9">
+                
+                        <h2 class="post-title" id="post_title9">
+                        </h2>
+                        <h4 class="post-subtitle" id=post_subtitle9>
+                        </h4>
+        
+                    <p class="post-meta" id="post-meta9"></p>
+                    <p id="post_content9"><p>
+                    <button id="read9"  class="btn" > Read more! </button>
+                </div>
+        
+                <div class="post-preview" id="post10">
+            
+                        <h2 class="post-title" id="post_title10">
+                        </h2>
+                        <h4 class="post-subtitle" id=post_subtitle10>
+                        </h4>
+                
+                    <p class="post-meta" id="post-meta10"></p>
+                    <p id="post_content10"><p>
+                    <button id="read10"  class="btn" > Read more! </button>
+                </div>
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <div id="nomoreolderposts" style="display:inline;"></div>
+                        <p style="display:inline; white-space:nowrap;"></p>
+                        <button class="button" id="olderposts" style="display:inline; white-space:nowrap;">&larr; Older Posts </button>
+                        <p style="display:inline; white-space:nowrap;"></p>
+                        <button class="button" id="newerposts" style="display:inline; white-space:nowrap;">Newer Posts &rarr;</button>
+                        <p style="display:inline; white-space:nowrap;"></p>
+                        <div id="nomorenewerposts" style="display:inline; white-space:nowrap;"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright text-muted">Webapp created by Preethi Ann Jacob & Powered by Hasura</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+    <script>
+            var myVar;
+
+                function myFunction() {
+                        myVar = setTimeout(showPage, 3000);
+                    }
+
+                function showPage() {
+                        document.getElementById("loader").style.display = "none";
+                        document.getElementById("myDiv").style.display = "block";
+                    }
+        </script>
+
+
+    <script>
+
+        $(document).ready(function()
+        {   
+
+            //FOR OLDPOSTS SETUP
+            var offset_times=0;
+            var limit=10;
+            var offset=0;
+            var count;
+            //FOR LIKE SETUP
+            var like_count=0;
+
+            document.getElementById("post_title1").style.display = "none";
+            document.getElementById("post_title2").style.display = "none";
+            document.getElementById("post_title3").style.display = "none";
+            document.getElementById("post_title4").style.display = "none";
+            document.getElementById("post_title5").style.display = "none";
+            document.getElementById("post_title6").style.display = "none";
+            document.getElementById("post_title7").style.display = "none";
+            document.getElementById("post_title8").style.display = "none";
+            document.getElementById("post_title9").style.display = "none";
+            document.getElementById("post_title10").style.display = "none";
+
+            document.getElementById("post_subtitle1").style.display = "none";
+            document.getElementById("post_subtitle2").style.display = "none";
+            document.getElementById("post_subtitle3").style.display = "none";
+            document.getElementById("post_subtitle4").style.display = "none";
+            document.getElementById("post_subtitle5").style.display = "none";
+            document.getElementById("post_subtitle6").style.display = "none";
+            document.getElementById("post_subtitle7").style.display = "none";
+            document.getElementById("post_subtitle8").style.display = "none";
+            document.getElementById("post_subtitle9").style.display = "none";
+            document.getElementById("post_subtitle10").style.display = "none";
+
+            document.getElementById("post-meta1").style.display = "none";
+            document.getElementById("post-meta2").style.display = "none";
+            document.getElementById("post-meta3").style.display = "none";
+            document.getElementById("post-meta4").style.display = "none";
+            document.getElementById("post-meta5").style.display = "none";
+            document.getElementById("post-meta6").style.display = "none";
+            document.getElementById("post-meta7").style.display = "none";
+            document.getElementById("post-meta8").style.display = "none";
+            document.getElementById("post-meta9").style.display = "none";
+            document.getElementById("post-meta10").style.display = "none";
+
+            document.getElementById("post_content1").style.display = "none";
+            document.getElementById("post_content2").style.display = "none";
+            document.getElementById("post_content3").style.display = "none";
+            document.getElementById("post_content4").style.display = "none";
+            document.getElementById("post_content5").style.display = "none";
+            document.getElementById("post_content6").style.display = "none";
+            document.getElementById("post_content7").style.display = "none";
+            document.getElementById("post_content8").style.display = "none";
+            document.getElementById("post_content9").style.display = "none";
+            document.getElementById("post_content10").style.display = "none";
+
+            document.getElementById("read1").style.display = "none";
+            document.getElementById("read2").style.display = "none";
+            document.getElementById("read3").style.display = "none";
+            document.getElementById("read4").style.display = "none";
+            document.getElementById("read5").style.display = "none";
+            document.getElementById("read6").style.display = "none";
+            document.getElementById("read7").style.display = "none";
+            document.getElementById("read8").style.display = "none";
+            document.getElementById("read9").style.display = "none";
+            document.getElementById("read10").style.display = "none";
+
+            //USING COOKIES TO GET STORED USER_ID AND AUTH_TOKEN AND USERNAME AND EXPIRE OLD POST_ID
+            document.cookie = "post_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            console.log(document.cookie);
+            window.getCookie = function(name) 
+            {
+                match = document.cookie.match(new RegExp(name + '=([^;]+)'));
+                //console.log(match);
+                if (match) return match[1];
+            }
+         
+            var user_id=parseInt(window.getCookie("user_id"));
+            var username=window.getCookie("username");
+            var auth_token=window.getCookie("auth_token");
+            var post_id=parseInt(window.getCookie("post_id"));
+            var post_id1, post_id2, post_id3, post_id4, post_id5, post_id6, post_id7, post_id8, post_id9, post_id10;
+            console.log(user_id);
+            console.log(username);
+            console.log(auth_token);
+            console.log(post_id);
+            
+            if(username===undefined)
+            {
+                location.href="/";
+            }
+            else{
+
+            document.getElementById("usertag").innerHTML='@'+username;
+
+            //FETCH POST TITLE AND CAPTION IN DESCENDING TIME ORDER
+            var request= new XMLHttpRequest();
+            request.onreadystatechange=function()
+            {
+                if(request.readyState===XMLHttpRequest.DONE)
+                {
+                        if(request.status===200) 
+                        { 
+                            console.log("this.responseText:   "+this.responseText);
+                            var a=this.responseText;
+                            if (a==="[]")
+                            {       document.getElementById("nomoreolderposts").innerHTML='No more older posts';
+                                    document.getElementById("olderposts").style.display = "none";
+                            }
+                            else
+                            {   document.getElementById("nomorenewerposts").innerHTML='No more newer posts';
+                                document.getElementById("newerposts").style.display = "none";
+                                var b=a.substring(1,a.length-1);
+                                console.log("b= "+b);
+                                var m=0;
+                                count=1;
+                                for(var i=0;i<b.length;i++)
+                                {   if(b[i]==='}' && b[i-1]==='}')
+                                    {   var c=b.substring(m,i+1);
+                                        console.log("c="+c);
+                                        m=i+2;
+                                        var d=JSON.parse(c);
+                                        console.log("d="+d);
+                                        var post_id=parseInt(d.post_id);
+                                        console.log("post_id:  "+post_id);
+                                        var post_title=d.post_title;
+                                        console.log("post_title:  "+post_title);
+                                        var post_caption=d.post_caption;
+                                        console.log("post_caption:  "+post_caption);
+                                        var post_content=d.post_content;
+                                        console.log("post_content:  "+post_content);
+                                        var author=d.gud.username;
+                                        console.log("author:  "+author);
+                                        var e=d.created_on;
+                                        var j;
+                                        for(j=0;j<e.length;j++)
+                                        {
+                                                if(e[j]==='T') break;
+                                        }
+                                        var created_on=e.substring(0,j);
+                                        console.log("created_on:  "+created_on);
+
+                                        //SET ALREADY FETCHED POST DATA IN THE PAGE
+                                        if(count===1)  
+                                        {       post_id1=post_id;
+                                                document.getElementById("read1").style.display = "block";
+                                                document.getElementById("post-meta1").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title1").style.display = "block";
+                                                        document.getElementById("post_title1").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle1").style.display = "block";
+                                                        document.getElementById("post_subtitle1").innerHTML=post_caption;
+                                                    }
+                                            
+
+                                                if(post_content!==undefined)
+                                                {   var countch=0; var post_content1=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content1=post_content1+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content1[k]===' '||post_content1[k]==='\t'||post_content1[k]==='\n'||post_content1[k]==='.')
+                                                            {
+                                                                post_content1=post_content1+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content1=post_content1+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+
+                                                    }
+                                                    document.getElementById("post_content1").style.display = "block";
+                                                    document.getElementById("post_content1").innerHTML = post_content1;
+                                                }
+                                                document.getElementById("post-meta1").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                          
+                                        } 
+                                        else if (count===2)
+                                        {       post_id2=post_id;
+                                                document.getElementById("read2").style.display = "block";
+                                                document.getElementById("post-meta2").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title2").style.display = "block";
+                                                        document.getElementById("post_title2").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle2").style.display = "block";
+                                                        document.getElementById("post_subtitle2").innerHTML=post_caption;
+                                                    }
+                                        
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content2="";
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content2=post_content2+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content2[k]===' '||post_content2[k]==='\t'||post_content2[k]==='\n'||post_content2[k]==='.')
+                                                            {
+                                                                post_content2=post_content2+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content2=post_content2+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content2").style.display = "block";
+                                                    document.getElementById("post_content2").innerHTML = post_content2;
+                                                }
+                                                document.getElementById("post-meta2").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                               
+
+                                        }
+                                        else if (count===3)
+                                        {       post_id3=post_id;
+                                                document.getElementById("read3").style.display = "block";
+                                                document.getElementById("post-meta3").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title3").style.display = "block";
+                                                        document.getElementById("post_title3").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle3").style.display = "block";
+                                                        document.getElementById("post_subtitle3").innerHTML=post_caption;
+                                                    }
+                                            
+                                                if(post_content!==undefined)
+                                                {   var countch=0;post_content3=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content3=post_content3+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content3[k]===' '||post_content3[k]==='\t'||post_content3[k]==='\n'||post_content3[k]==='.')
+                                                            {
+                                                                post_content3=post_content3+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content3=post_content3+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content3").style.display = "block";
+                                                    document.getElementById("post_content3").innerHTML = post_content3;
+                                                }
+                                                document.getElementById("post-meta3").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                
+
+                                        }
+                                        else if (count===4)
+                                        {       post_id4=post_id;
+                                                document.getElementById("read4").style.display = "block";
+                                                document.getElementById("post-meta4").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title4").style.display = "block";
+                                                        document.getElementById("post_title4").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle4").style.display = "block";
+                                                        document.getElementById("post_subtitle4").innerHTML=post_caption;
+                                                    }
+
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content4=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content4=post_content4+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content4[k]===' '||post_content4[k]==='\t'||post_content4[k]==='\n'||post_content4[k]==='.')
+                                                            {
+                                                                post_content4=post_content4+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content4=post_content4+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content4").style.display = "block";
+                                                    document.getElementById("post_content4").innerHTML = post_content4;
+                                                }
+                                                document.getElementById("post-meta4").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                               
+
+                                        }
+                                        else if (count===5)
+                                        {       post_id5=post_id;
+                                                document.getElementById("read5").style.display = "block";
+                                                document.getElementById("post-meta5").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title5").style.display = "block";
+                                                        document.getElementById("post_title5").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle5").style.display = "block";
+                                                        document.getElementById("post_subtitle5").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content5=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content5=post_content5+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content5[k]===' '||post_content5[k]==='\t'||post_content5[k]==='\n'||post_content5[k]==='.')
+                                                            {
+                                                                post_content5=post_content5+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content5=post_content5+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content5").style.display = "block";
+                                                    document.getElementById("post_content5").innerHTML = post_content5;
+                                                }
+                                                document.getElementById("post-meta5").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                
+
+                                        }
+                                        else if (count===6)
+                                        {       post_id6=post_id;
+                                                document.getElementById("read6").style.display = "block";
+                                                document.getElementById("post-meta6").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title6").style.display = "block";
+                                                        document.getElementById("post_title6").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle6").style.display = "block";
+                                                        document.getElementById("post_subtitle6").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content6=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content6=post_content6+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content6[k]===' '||post_content6[k]==='\t'||post_content6[k]==='\n'||post_content6[k]==='.')
+                                                            {
+                                                                post_content6=post_content6+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content6=post_content6+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content6").style.display = "block";
+                                                    document.getElementById("post_content6").innerHTML = post_content6;
+                                                }
+                                                document.getElementById("post-meta6").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                               
+
+                                        }
+                                        else if (count===7)
+                                        {       post_id7=post_id;
+                                                document.getElementById("read7").style.display = "block";
+                                                document.getElementById("post-meta7").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title7").style.display = "block";
+                                                        document.getElementById("post_title7").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle7").style.display = "block";
+                                                        document.getElementById("post_subtitle7").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content7=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content7=post_content7+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content7[k]===' '||post_content7[k]==='\t'||post_content7[k]==='\n'||post_content7[k]==='.')
+                                                            {
+                                                                post_content7=post_content7+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content7=post_content7+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content7").style.display = "block";
+                                                    document.getElementById("post_content7").innerHTML = post_content7;
+                                                }
+                                                document.getElementById("post-meta7").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                
+
+                                        }
+                                        else if (count===8)
+                                        {       post_id8=post_id;
+                                                document.getElementById("read8").style.display = "block";
+                                                document.getElementById("post-meta8").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title8").style.display = "block";
+                                                        document.getElementById("post_title8").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle8").style.display = "block";
+                                                        document.getElementById("post_subtitle8").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content8=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content8=post_content8+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content8[k]===' '||post_content8[k]==='\t'||post_content8[k]==='\n'||post_content8[k]==='.')
+                                                            {
+                                                                post_content8=post_content8+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content8=post_content8+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content8").style.display = "block";
+                                                    document.getElementById("post_content8").innerHTML = post_content8;
+                                                }
+                                                document.getElementById("post-meta8").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                 
+                                        }
+                                        else if (count===9)
+                                        {       post_id9=post_id;
+                                                document.getElementById("read9").style.display = "block";
+                                                document.getElementById("post-meta9").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title9").style.display = "block";
+                                                        document.getElementById("post_title9").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle9").style.display = "block";
+                                                        document.getElementById("post_subtitle9").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content9=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content9=post_content9+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content9[k]===' '||post_content9[k]==='\t'||post_content9[k]==='\n'||post_content9[k]==='.')
+                                                            {
+                                                                post_content9=post_content9+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content9=post_content9+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content9").style.display = "block";
+                                                    document.getElementById("post_content9").innerHTML = post_content9;
+                                                }
+                                                document.getElementById("post-meta9").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                
+
+                                        }
+                                        else if (count===10)
+                                        {       post_id10=post_id;
+                                                document.getElementById("read10").style.display = "block";
+                                                document.getElementById("post-meta10").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title10").style.display = "block";
+                                                        document.getElementById("post_title10").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle10").style.display = "block";
+                                                        document.getElementById("post_subtitle10").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content10=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content10=post_content10+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content10[k]===' '||post_content10[k]==='\t'||post_content10[k]==='\n'||post_content10[k]==='.')
+                                                            {
+                                                                post_content10=post_content10+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content10=post_content10+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content10").style.display = "block";
+                                                    document.getElementById("post_content10").innerHTML = post_content10;
+                                                }
+                                                document.getElementById("post-meta10").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                 
+
+                                        }
+                                        count++;
+                                        offset++;
+                                    }                       
+
+                                }
+                                offset_times++;
+                                count--;
+                                console.log("offset_times="+offset_times);
+                                console.log("offset="+offset);
+                                document.getElementById("read1").onclick=function()
+                                {   document.cookie='post_id='+post_id1;
+                                    location.href="/singlepost";
+                                }
+                                document.getElementById("read2").onclick=function(){document.cookie='post_id='+post_id2;location.href="/singlepost";}
+                                document.getElementById("read3").onclick=function(){document.cookie='post_id='+post_id3;location.href="/singlepost";}
+                                document.getElementById("read4").onclick=function(){document.cookie='post_id='+post_id4;location.href="/singlepost";}
+                                document.getElementById("read5").onclick=function(){document.cookie='post_id='+post_id5;location.href="/singlepost";}
+                                document.getElementById("read6").onclick=function(){document.cookie='post_id='+post_id6;location.href="/singlepost";}
+                                document.getElementById("read7").onclick=function(){document.cookie='post_id='+post_id7;location.href="/singlepost";}
+                                document.getElementById("read8").onclick=function(){document.cookie='post_id='+post_id8;location.href="/singlepost";}
+                                document.getElementById("read9").onclick=function(){document.cookie='post_id='+post_id9;location.href="/singlepost";}
+                                document.getElementById("read10").onclick=function(){document.cookie='post_id='+post_id10;location.href="/singlepost";}
+                            }
+                                
+                        }
+                        else 
+                        { 
+                                console.log(this.responseText);
+                                alert("Error in loading");
+                        }
+                }               
+            }     
+            request.open('POST', "https://data.predawn45.hasura-app.io/v1/query", true);
+            request.setRequestHeader('Content-type','application/json');
+            request.setRequestHeader('Authorization','Bearer '+ auth_token);
+            request.withCredentials=true;
+            request.send(JSON.stringify({      type:"select",
+                                                args:{  table:"posts",
+                                                        columns:   [    "post_id",
+                                                                        "post_title",
+                                                                        "post_caption",
+                                                                        "post_content",
+                                                                        "created_on",
+                                                                        {   "name": "gud",
+                                                                            "columns": ["username"]
+                                                                        }
+                                                                    ],
+                                                                    order_by :"-created_on",
+                                                                    limit: limit,
+                                                                    offset:offset
+                                                                }
+                                                    })
+                                        ); 
+            //LOGOUT
+            document.getElementById("logout").onclick=function()
+            {
+                var request= new XMLHttpRequest();
+                request.onreadystatechange=function()
+                {
+                            if(request.readyState===XMLHttpRequest.DONE)
+                            {
+                                if(request.status===200) 
+                                {   alert("Logged out successfully!See you "+username+"!");
+                                    window.location="/";
+                                    console.log(this.responseText); 
+                                    console.log(document.cookie);
+                                }
+                                else 
+                                { 
+                                    alert("Network error");
+                                }
+                            }               
+                }    
+                document.cookie = "user_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "auth_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "post_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                request.open('POST',"https://auth.predawn45.hasura-app.io/user/logout ", true);
+                request.setRequestHeader('Authorization','Bearer '+ auth_token);
+                request.withCredentials=true;
+                request.send(null);
+            };
+
+            //FUNCTION TO GET OLDER POST DETAILS
+            var olderposts = document.getElementById("olderposts");
+            olderposts.onclick= function()
+            {           
+            var request= new XMLHttpRequest();
+            request.onreadystatechange=function()
+            {
+                if(request.readyState===XMLHttpRequest.DONE)
+                {
+                        if(request.status===200) 
+                        {   
+                            document.getElementById("post_title1").style.display = "none";
+                            document.getElementById("post_title2").style.display = "none";
+                            document.getElementById("post_title3").style.display = "none";
+                            document.getElementById("post_title4").style.display = "none";
+                            document.getElementById("post_title5").style.display = "none";
+                            document.getElementById("post_title6").style.display = "none";
+                            document.getElementById("post_title7").style.display = "none";
+                            document.getElementById("post_title8").style.display = "none";
+                            document.getElementById("post_title9").style.display = "none";
+                            document.getElementById("post_title10").style.display = "none";
+
+                            document.getElementById("post_subtitle1").style.display = "none";
+                            document.getElementById("post_subtitle2").style.display = "none";
+                            document.getElementById("post_subtitle3").style.display = "none";
+                            document.getElementById("post_subtitle4").style.display = "none";
+                            document.getElementById("post_subtitle5").style.display = "none";
+                            document.getElementById("post_subtitle6").style.display = "none";
+                            document.getElementById("post_subtitle7").style.display = "none";
+                            document.getElementById("post_subtitle8").style.display = "none";
+                            document.getElementById("post_subtitle9").style.display = "none";
+                            document.getElementById("post_subtitle10").style.display = "none";
+
+                            document.getElementById("post-meta1").style.display = "none";
+                            document.getElementById("post-meta2").style.display = "none";
+                            document.getElementById("post-meta3").style.display = "none";
+                            document.getElementById("post-meta4").style.display = "none";
+                            document.getElementById("post-meta5").style.display = "none";
+                            document.getElementById("post-meta6").style.display = "none";
+                            document.getElementById("post-meta7").style.display = "none";
+                            document.getElementById("post-meta8").style.display = "none";
+                            document.getElementById("post-meta9").style.display = "none";
+                            document.getElementById("post-meta10").style.display = "none";
+
+                            document.getElementById("post_content1").style.display = "none";
+                            document.getElementById("post_content2").style.display = "none";
+                            document.getElementById("post_content3").style.display = "none";
+                            document.getElementById("post_content4").style.display = "none";
+                            document.getElementById("post_content5").style.display = "none";
+                            document.getElementById("post_content6").style.display = "none";
+                            document.getElementById("post_content7").style.display = "none";
+                            document.getElementById("post_content8").style.display = "none";
+                            document.getElementById("post_content9").style.display = "none";
+                            document.getElementById("post_content10").style.display = "none";
+
+                            document.getElementById("read1").style.display = "none";
+                            document.getElementById("read2").style.display = "none";
+                            document.getElementById("read3").style.display = "none";
+                            document.getElementById("read4").style.display = "none";
+                            document.getElementById("read5").style.display = "none";
+                            document.getElementById("read6").style.display = "none";
+                            document.getElementById("read7").style.display = "none";
+                            document.getElementById("read8").style.display = "none";
+                            document.getElementById("read9").style.display = "none";
+                            document.getElementById("read10").style.display = "none";
+
+                            document.getElementById("nomoreolderposts").innerHTML='';
+                            document.getElementById("olderposts").style.display = "block";
+                            document.getElementById("nomorenewerposts").innerHTML='';
+                            document.getElementById("newerposts").style.display = "block";
+
+                            console.log("this.responseText:   "+this.responseText);
+                            var a=this.responseText;
+                            if (a==="[]")
+                            {       document.getElementById("nomoreolderposts").innerHTML='No more older posts';
+                                    document.getElementById("olderposts").style.display = "none";
+                            }
+                            else
+                            {  
+                                document.getElementById("newerposts").style.display = "block";
+                                var b=a.substring(1,a.length-1);
+                                console.log("b= "+b);
+                                var m=0;
+                                count=1;
+                                for(var i=0;i<b.length;i++)
+                                {   if(b[i]==='}' && b[i-1]==='}')
+                                    {   var c=b.substring(m,i+1);
+                                        console.log("c="+c);
+                                        m=i+2;
+                                        var d=JSON.parse(c);
+                                        console.log("d="+d);
+                                        var post_id=parseInt(d.post_id);
+                                        console.log("post_id:  "+post_id);
+                                        var post_title=d.post_title;
+                                        console.log("post_title:  "+post_title);
+                                        var post_caption=d.post_caption;
+                                        console.log("post_caption:  "+post_caption);
+                                        var post_content=d.post_content;
+                                        console.log("post_content:  "+post_content);
+                                        var author=d.gud.username;
+                                        console.log("author:  "+author);
+                                        var e=d.created_on;
+                                        var j;
+                                        for(j=0;j<e.length;j++)
+                                        {
+                                                if(e[j]==='T') break;
+                                        }
+                                        var created_on=e.substring(0,j);
+                                        console.log("created_on:  "+created_on);
+
+                                        //SET ALREADY FETCHED POST DATA IN THE PAGE
+                                        if(count===1)  
+                                        {       post_id1=post_id;
+                                                document.getElementById("read1").style.display = "block";
+                                                document.getElementById("post-meta1").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title1").style.display = "block";
+                                                        document.getElementById("post_title1").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle1").style.display = "block";
+                                                        document.getElementById("post_subtitle1").innerHTML=post_caption;
+                                                    }
+                                            
+
+                                                if(post_content!==undefined)
+                                                {   var countch=0; var post_content1=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content1=post_content1+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content1[k]===' '||post_content1[k]==='\t'||post_content1[k]==='\n'||post_content1[k]==='.')
+                                                            {
+                                                                post_content1=post_content1+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content1=post_content1+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+
+                                                    }
+                                                    document.getElementById("post_content1").style.display = "block";
+                                                    document.getElementById("post_content1").innerHTML = post_content1;
+                                                }
+                                                document.getElementById("post-meta1").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                          
+                                        } 
+                                        else if (count===2)
+                                        {       post_id2=post_id;
+                                                document.getElementById("read2").style.display = "block";
+                                                document.getElementById("post-meta2").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title2").style.display = "block";
+                                                        document.getElementById("post_title2").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle2").style.display = "block";
+                                                        document.getElementById("post_subtitle2").innerHTML=post_caption;
+                                                    }
+                                        
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content2="";
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content2=post_content2+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content2[k]===' '||post_content2[k]==='\t'||post_content2[k]==='\n'||post_content2[k]==='.')
+                                                            {
+                                                                post_content2=post_content2+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content2=post_content2+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content2").style.display = "block";
+                                                    document.getElementById("post_content2").innerHTML = post_content2;
+                                                }
+                                                document.getElementById("post-meta2").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                               
+
+                                        }
+                                        else if (count===3)
+                                        {       post_id3=post_id;
+                                                document.getElementById("read3").style.display = "block";
+                                                document.getElementById("post-meta3").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title3").style.display = "block";
+                                                        document.getElementById("post_title3").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle3").style.display = "block";
+                                                        document.getElementById("post_subtitle3").innerHTML=post_caption;
+                                                    }
+                                            
+                                                if(post_content!==undefined)
+                                                {   var countch=0;post_content3=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content3=post_content3+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content3[k]===' '||post_content3[k]==='\t'||post_content3[k]==='\n'||post_content3[k]==='.')
+                                                            {
+                                                                post_content3=post_content3+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content3=post_content3+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content3").style.display = "block";
+                                                    document.getElementById("post_content3").innerHTML = post_content3;
+                                                }
+                                                document.getElementById("post-meta3").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                
+
+                                        }
+                                        else if (count===4)
+                                        {       post_id4=post_id;
+                                                document.getElementById("read4").style.display = "block";
+                                                document.getElementById("post-meta4").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title4").style.display = "block";
+                                                        document.getElementById("post_title4").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle4").style.display = "block";
+                                                        document.getElementById("post_subtitle4").innerHTML=post_caption;
+                                                    }
+
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content4=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content4=post_content4+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content4[k]===' '||post_content4[k]==='\t'||post_content4[k]==='\n'||post_content4[k]==='.')
+                                                            {
+                                                                post_content4=post_content4+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content4=post_content4+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content4").style.display = "block";
+                                                    document.getElementById("post_content4").innerHTML = post_content4;
+                                                }
+                                                document.getElementById("post-meta4").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                               
+
+                                        }
+                                        else if (count===5)
+                                        {       post_id5=post_id;
+                                                document.getElementById("read5").style.display = "block";
+                                                document.getElementById("post-meta5").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title5").style.display = "block";
+                                                        document.getElementById("post_title5").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle5").style.display = "block";
+                                                        document.getElementById("post_subtitle5").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content5=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content5=post_content5+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content5[k]===' '||post_content5[k]==='\t'||post_content5[k]==='\n'||post_content5[k]==='.')
+                                                            {
+                                                                post_content5=post_content5+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content5=post_content5+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content5").style.display = "block";
+                                                    document.getElementById("post_content5").innerHTML = post_content5;
+                                                }
+                                                document.getElementById("post-meta5").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                
+
+                                        }
+                                        else if (count===6)
+                                        {       post_id6=post_id;
+                                                document.getElementById("read6").style.display = "block";
+                                                document.getElementById("post-meta6").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title6").style.display = "block";
+                                                        document.getElementById("post_title6").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle6").style.display = "block";
+                                                        document.getElementById("post_subtitle6").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content6=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content6=post_content6+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content6[k]===' '||post_content6[k]==='\t'||post_content6[k]==='\n'||post_content6[k]==='.')
+                                                            {
+                                                                post_content6=post_content6+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content6=post_content6+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content6").style.display = "block";
+                                                    document.getElementById("post_content6").innerHTML = post_content6;
+                                                }
+                                                document.getElementById("post-meta6").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                               
+
+                                        }
+                                        else if (count===7)
+                                        {       post_id7=post_id;
+                                                document.getElementById("read7").style.display = "block";
+                                                document.getElementById("post-meta7").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title7").style.display = "block";
+                                                        document.getElementById("post_title7").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle7").style.display = "block";
+                                                        document.getElementById("post_subtitle7").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content7=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content7=post_content7+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content7[k]===' '||post_content7[k]==='\t'||post_content7[k]==='\n'||post_content7[k]==='.')
+                                                            {
+                                                                post_content7=post_content7+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content7=post_content7+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content7").style.display = "block";
+                                                    document.getElementById("post_content7").innerHTML = post_content7;
+                                                }
+                                                document.getElementById("post-meta7").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                
+
+                                        }
+                                        else if (count===8)
+                                        {       post_id8=post_id;
+                                                document.getElementById("read8").style.display = "block";
+                                                document.getElementById("post-meta8").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title8").style.display = "block";
+                                                        document.getElementById("post_title8").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle8").style.display = "block";
+                                                        document.getElementById("post_subtitle8").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content8=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content8=post_content8+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content8[k]===' '||post_content8[k]==='\t'||post_content8[k]==='\n'||post_content8[k]==='.')
+                                                            {
+                                                                post_content8=post_content8+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content8=post_content8+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content8").style.display = "block";
+                                                    document.getElementById("post_content8").innerHTML = post_content8;
+                                                }
+                                                document.getElementById("post-meta8").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                 
+                                        }
+                                        else if (count===9)
+                                        {       post_id9=post_id;
+                                                document.getElementById("read9").style.display = "block";
+                                                document.getElementById("post-meta9").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title9").style.display = "block";
+                                                        document.getElementById("post_title9").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle9").style.display = "block";
+                                                        document.getElementById("post_subtitle9").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content9=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content9=post_content9+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content9[k]===' '||post_content9[k]==='\t'||post_content9[k]==='\n'||post_content9[k]==='.')
+                                                            {
+                                                                post_content9=post_content9+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content9=post_content9+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content9").style.display = "block";
+                                                    document.getElementById("post_content9").innerHTML = post_content9;
+                                                }
+                                                document.getElementById("post-meta9").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                
+
+                                        }
+                                        else if (count===10)
+                                        {       post_id10=post_id;
+                                                document.getElementById("read10").style.display = "block";
+                                                document.getElementById("post-meta10").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title10").style.display = "block";
+                                                        document.getElementById("post_title10").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle10").style.display = "block";
+                                                        document.getElementById("post_subtitle10").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content10=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content10=post_content10+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content10[k]===' '||post_content10[k]==='\t'||post_content10[k]==='\n'||post_content10[k]==='.')
+                                                            {
+                                                                post_content10=post_content10+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content10=post_content10+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content10").style.display = "block";
+                                                    document.getElementById("post_content10").innerHTML = post_content10;
+                                                }
+                                                document.getElementById("post-meta10").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                 
+
+                                        }
+                                        count++;
+                                        offset++;
+                                    }                       
+
+                                }
+                                offset_times++;
+                                count--;
+                                //offset=offset_times*limit;
+                                console.log("offset_times="+offset_times);
+                                console.log("offset="+offset);
+                                document.getElementById("read1").onclick=function()
+                                {   document.cookie='post_id='+post_id1;
+                                    location.href="/singlepost";
+                                }
+                                document.getElementById("read2").onclick=function(){document.cookie='post_id='+post_id2;location.href="/singlepost";}
+                                document.getElementById("read3").onclick=function(){document.cookie='post_id='+post_id3;location.href="/singlepost";}
+                                document.getElementById("read4").onclick=function(){document.cookie='post_id='+post_id4;location.href="/singlepost";}
+                                document.getElementById("read5").onclick=function(){document.cookie='post_id='+post_id5;location.href="/singlepost";}
+                                document.getElementById("read6").onclick=function(){document.cookie='post_id='+post_id6;location.href="/singlepost";}
+                                document.getElementById("read7").onclick=function(){document.cookie='post_id='+post_id7;location.href="/singlepost";}
+                                document.getElementById("read8").onclick=function(){document.cookie='post_id='+post_id8;location.href="/singlepost";}
+                                document.getElementById("read9").onclick=function(){document.cookie='post_id='+post_id9;location.href="/singlepost";}
+                                document.getElementById("read10").onclick=function(){document.cookie='post_id='+post_id10;location.href="/singlepost";}
+
+                                document.getElementById("olderposts").innerHTML="&larr; Older Posts";
+                            }
+                                
+                        }
+                        else 
+                        { 
+                                console.log(this.responseText);
+                                alert("Error in loading");
+                                document.getElementById("olderposts").innerHTML="&larr; Older Posts ";
+                        }
+                }               
+            }     
+            request.open('POST', "https://data.predawn45.hasura-app.io/v1/query", true);
+            request.setRequestHeader('Content-type','application/json');
+            request.setRequestHeader('Authorization','Bearer '+ auth_token);
+            request.withCredentials=true;
+            request.send(JSON.stringify({      type:"select",
+                                                args:{  table:"posts",
+                                                        columns:   [    "post_id",
+                                                                        "post_title",
+                                                                        "post_caption",
+                                                                        "post_content",
+                                                                        "created_on",
+                                                                        {   "name": "gud",
+                                                                            "columns": ["username"]
+                                                                        }
+                                                                    ],
+                                                                    order_by :"-created_on",
+                                                                    limit: limit,
+                                                                    offset:offset
+                                                                }
+                                                    })
+                                        ); 
+            document.getElementById("olderposts").innerHTML="Fetching Older posts...";
+            };
+
+
+
+            //FUNCTION TO GET NEWER POST DETAILS
+            var newerposts = document.getElementById("newerposts");
+            newerposts.onclick= function()
+            {
+            
+            if ((offset-(count+limit))<0)
+                            {       document.getElementById("nomorenewerposts").innerHTML='No more newer posts';
+                                    document.getElementById("newerposts").style.display = "none";
+                            }  
+            else
+              {  offset=offset-(count+limit);         
+            var request= new XMLHttpRequest();
+            request.onreadystatechange=function()
+            {
+                if(request.readyState===XMLHttpRequest.DONE)
+                {
+                        if(request.status===200) 
+                        {   
+                            document.getElementById("post_title1").style.display = "none";
+                            document.getElementById("post_title2").style.display = "none";
+                            document.getElementById("post_title3").style.display = "none";
+                            document.getElementById("post_title4").style.display = "none";
+                            document.getElementById("post_title5").style.display = "none";
+                            document.getElementById("post_title6").style.display = "none";
+                            document.getElementById("post_title7").style.display = "none";
+                            document.getElementById("post_title8").style.display = "none";
+                            document.getElementById("post_title9").style.display = "none";
+                            document.getElementById("post_title10").style.display = "none";
+
+                            document.getElementById("post_subtitle1").style.display = "none";
+                            document.getElementById("post_subtitle2").style.display = "none";
+                            document.getElementById("post_subtitle3").style.display = "none";
+                            document.getElementById("post_subtitle4").style.display = "none";
+                            document.getElementById("post_subtitle5").style.display = "none";
+                            document.getElementById("post_subtitle6").style.display = "none";
+                            document.getElementById("post_subtitle7").style.display = "none";
+                            document.getElementById("post_subtitle8").style.display = "none";
+                            document.getElementById("post_subtitle9").style.display = "none";
+                            document.getElementById("post_subtitle10").style.display = "none";
+
+                            document.getElementById("post-meta1").style.display = "none";
+                            document.getElementById("post-meta2").style.display = "none";
+                            document.getElementById("post-meta3").style.display = "none";
+                            document.getElementById("post-meta4").style.display = "none";
+                            document.getElementById("post-meta5").style.display = "none";
+                            document.getElementById("post-meta6").style.display = "none";
+                            document.getElementById("post-meta7").style.display = "none";
+                            document.getElementById("post-meta8").style.display = "none";
+                            document.getElementById("post-meta9").style.display = "none";
+                            document.getElementById("post-meta10").style.display = "none";
+
+                            document.getElementById("post_content1").style.display = "none";
+                            document.getElementById("post_content2").style.display = "none";
+                            document.getElementById("post_content3").style.display = "none";
+                            document.getElementById("post_content4").style.display = "none";
+                            document.getElementById("post_content5").style.display = "none";
+                            document.getElementById("post_content6").style.display = "none";
+                            document.getElementById("post_content7").style.display = "none";
+                            document.getElementById("post_content8").style.display = "none";
+                            document.getElementById("post_content9").style.display = "none";
+                            document.getElementById("post_content10").style.display = "none";
+
+                            document.getElementById("read1").style.display = "none";
+                            document.getElementById("read2").style.display = "none";
+                            document.getElementById("read3").style.display = "none";
+                            document.getElementById("read4").style.display = "none";
+                            document.getElementById("read5").style.display = "none";
+                            document.getElementById("read6").style.display = "none";
+                            document.getElementById("read7").style.display = "none";
+                            document.getElementById("read8").style.display = "none";
+                            document.getElementById("read9").style.display = "none";
+                            document.getElementById("read10").style.display = "none";
+
+                            document.getElementById("nomoreolderposts").innerHTML='';
+                            document.getElementById("olderposts").style.display = "block";
+                            document.getElementById("nomorenewerposts").innerHTML='';
+                            document.getElementById("newerposts").style.display = "block";
+
+
+                            console.log("this.responseText:   "+this.responseText);
+                            var a=this.responseText;
+                            if (a==="[]")
+                            {       document.getElementById("nomorenewerposts").innerHTML='No more newer posts';
+                                    document.getElementById("newerposts").style.display = "none";
+                            }
+                            else
+                            {   document.getElementById("nomoreolderposts").innerHTML='';
+                                document.getElementById("olderposts").style.display = "block";
+                                var b=a.substring(1,a.length-1);
+                                console.log("b= "+b);
+                                var m=0;
+                                //offset=offset-(count+limit);
+                                count=1;
+                                for(var i=0;i<b.length;i++)
+                                {   if(b[i]==='}' && b[i-1]==='}')
+                                    {   var c=b.substring(m,i+1);
+                                        console.log("c="+c);
+                                        m=i+2;
+                                        var d=JSON.parse(c);
+                                        console.log("d="+d);
+                                        var post_id=parseInt(d.post_id);
+                                        console.log("post_id:  "+post_id);
+                                        var post_title=d.post_title;
+                                        console.log("post_title:  "+post_title);
+                                        var post_caption=d.post_caption;
+                                        console.log("post_caption:  "+post_caption);
+                                        var post_content=d.post_content;
+                                        console.log("post_content:  "+post_content);
+                                        var author=d.gud.username;
+                                        console.log("author:  "+author);
+                                        var e=d.created_on;
+                                        var j;
+                                        for(j=0;j<e.length;j++)
+                                        {
+                                                if(e[j]==='T') break;
+                                        }
+                                        var created_on=e.substring(0,j);
+                                        console.log("created_on:  "+created_on);
+                                        //str=str+'<b>'+post_title+'</b><br><small>'+post_caption+'</small><br><i>Published by <b>'+author+ '</b> on '+created_on+'<br></i><br><br><br><br>';
+
+                                        //SET ALREADY FETCHED POST DATA IN THE PAGE
+                                        if(count===1)  
+                                        {       post_id1=post_id;
+                                                document.getElementById("read1").style.display = "block";
+                                                document.getElementById("post-meta1").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title1").style.display = "block";
+                                                        document.getElementById("post_title1").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle1").style.display = "block";
+                                                        document.getElementById("post_subtitle1").innerHTML=post_caption;
+                                                    }
+                                            
+
+                                                if(post_content!==undefined)
+                                                {   var countch=0; var post_content1=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content1=post_content1+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content1[k]===' '||post_content1[k]==='\t'||post_content1[k]==='\n'||post_content1[k]==='.')
+                                                            {
+                                                                post_content1=post_content1+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content1=post_content1+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+
+                                                    }
+                                                    document.getElementById("post_content1").style.display = "block";
+                                                    document.getElementById("post_content1").innerHTML = post_content1;
+                                                }
+                                                document.getElementById("post-meta1").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                          
+                                        } 
+                                        else if (count===2)
+                                        {       post_id2=post_id;
+                                                document.getElementById("read2").style.display = "block";
+                                                document.getElementById("post-meta2").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title2").style.display = "block";
+                                                        document.getElementById("post_title2").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle2").style.display = "block";
+                                                        document.getElementById("post_subtitle2").innerHTML=post_caption;
+                                                    }
+                                        
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content2="";
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content2=post_content2+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content2[k]===' '||post_content2[k]==='\t'||post_content2[k]==='\n'||post_content2[k]==='.')
+                                                            {
+                                                                post_content2=post_content2+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content2=post_content2+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content2").style.display = "block";
+                                                    document.getElementById("post_content2").innerHTML = post_content2;
+                                                }
+                                                document.getElementById("post-meta2").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                               
+
+                                        }
+                                        else if (count===3)
+                                        {       post_id3=post_id;
+                                                document.getElementById("read3").style.display = "block";
+                                                document.getElementById("post-meta3").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title3").style.display = "block";
+                                                        document.getElementById("post_title3").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle3").style.display = "block";
+                                                        document.getElementById("post_subtitle3").innerHTML=post_caption;
+                                                    }
+                                            
+                                                if(post_content!==undefined)
+                                                {   var countch=0;post_content3=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content3=post_content3+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content3[k]===' '||post_content3[k]==='\t'||post_content3[k]==='\n'||post_content3[k]==='.')
+                                                            {
+                                                                post_content3=post_content3+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content3=post_content3+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content3").style.display = "block";
+                                                    document.getElementById("post_content3").innerHTML = post_content3;
+                                                }
+                                                document.getElementById("post-meta3").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                
+
+                                        }
+                                        else if (count===4)
+                                        {       post_id4=post_id;
+                                                document.getElementById("read4").style.display = "block";
+                                                document.getElementById("post-meta4").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title4").style.display = "block";
+                                                        document.getElementById("post_title4").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle4").style.display = "block";
+                                                        document.getElementById("post_subtitle4").innerHTML=post_caption;
+                                                    }
+
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content4=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content4=post_content4+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content4[k]===' '||post_content4[k]==='\t'||post_content4[k]==='\n'||post_content4[k]==='.')
+                                                            {
+                                                                post_content4=post_content4+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content4=post_content4+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content4").style.display = "block";
+                                                    document.getElementById("post_content4").innerHTML = post_content4;
+                                                }
+                                                document.getElementById("post-meta4").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                               
+
+                                        }
+                                        else if (count===5)
+                                        {       post_id5=post_id;
+                                                document.getElementById("read5").style.display = "block";
+                                                document.getElementById("post-meta5").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title5").style.display = "block";
+                                                        document.getElementById("post_title5").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle5").style.display = "block";
+                                                        document.getElementById("post_subtitle5").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content5=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content5=post_content5+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content5[k]===' '||post_content5[k]==='\t'||post_content5[k]==='\n'||post_content5[k]==='.')
+                                                            {
+                                                                post_content5=post_content5+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content5=post_content5+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content5").style.display = "block";
+                                                    document.getElementById("post_content5").innerHTML = post_content5;
+                                                }
+                                                document.getElementById("post-meta5").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                
+
+                                        }
+                                        else if (count===6)
+                                        {       post_id6=post_id;
+                                                document.getElementById("read6").style.display = "block";
+                                                document.getElementById("post-meta6").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title6").style.display = "block";
+                                                        document.getElementById("post_title6").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle6").style.display = "block";
+                                                        document.getElementById("post_subtitle6").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content6=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content6=post_content6+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content6[k]===' '||post_content6[k]==='\t'||post_content6[k]==='\n'||post_content6[k]==='.')
+                                                            {
+                                                                post_content6=post_content6+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content6=post_content6+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content6").style.display = "block";
+                                                    document.getElementById("post_content6").innerHTML = post_content6;
+                                                }
+                                                document.getElementById("post-meta6").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                               
+
+                                        }
+                                        else if (count===7)
+                                        {       post_id7=post_id;
+                                                document.getElementById("read7").style.display = "block";
+                                                document.getElementById("post-meta7").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title7").style.display = "block";
+                                                        document.getElementById("post_title7").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle7").style.display = "block";
+                                                        document.getElementById("post_subtitle7").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content7=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content7=post_content7+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content7[k]===' '||post_content7[k]==='\t'||post_content7[k]==='\n'||post_content7[k]==='.')
+                                                            {
+                                                                post_content7=post_content7+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content7=post_content7+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content7").style.display = "block";
+                                                    document.getElementById("post_content7").innerHTML = post_content7;
+                                                }
+                                                document.getElementById("post-meta7").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                
+
+                                        }
+                                        else if (count===8)
+                                        {       post_id8=post_id;
+                                                document.getElementById("read8").style.display = "block";
+                                                document.getElementById("post-meta8").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title8").style.display = "block";
+                                                        document.getElementById("post_title8").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle8").style.display = "block";
+                                                        document.getElementById("post_subtitle8").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content8=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content8=post_content8+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content8[k]===' '||post_content8[k]==='\t'||post_content8[k]==='\n'||post_content8[k]==='.')
+                                                            {
+                                                                post_content8=post_content8+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content8=post_content8+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content8").style.display = "block";
+                                                    document.getElementById("post_content8").innerHTML = post_content8;
+                                                }
+                                                document.getElementById("post-meta8").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                 
+                                        }
+                                        else if (count===9)
+                                        {       post_id9=post_id;
+                                                document.getElementById("read9").style.display = "block";
+                                                document.getElementById("post-meta9").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title9").style.display = "block";
+                                                        document.getElementById("post_title9").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle9").style.display = "block";
+                                                        document.getElementById("post_subtitle9").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content9=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content9=post_content9+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content9[k]===' '||post_content9[k]==='\t'||post_content9[k]==='\n'||post_content9[k]==='.')
+                                                            {
+                                                                post_content9=post_content9+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content9=post_content9+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content9").style.display = "block";
+                                                    document.getElementById("post_content9").innerHTML = post_content9;
+                                                }
+                                                document.getElementById("post-meta9").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                
+
+                                        }
+                                        else if (count===10)
+                                        {       post_id10=post_id;
+                                                document.getElementById("read10").style.display = "block";
+                                                document.getElementById("post-meta10").style.display = "block";
+
+                                                if(post_title!==undefined)
+                                                    {   document.getElementById("post_title10").style.display = "block";
+                                                        document.getElementById("post_title10").innerHTML='<hr>'+post_title;
+                                                    }
+                                                if(post_caption!==undefined)
+                                                    {   document.getElementById("post_subtitle10").style.display = "block";
+                                                        document.getElementById("post_subtitle10").innerHTML=post_caption;
+                                                    }
+                                                if(post_content!==undefined)
+                                                {   var countch=0;var post_content10=""
+                                                    for(var k=0;k<post_content.length;k++)
+                                                    {   post_content10=post_content10+post_content[k];
+                                                        if(countch>= 210 && countch<=220)
+                                                        {
+                                                            if(post_content10[k]===' '||post_content10[k]==='\t'||post_content10[k]==='\n'||post_content10[k]==='.')
+                                                            {
+                                                                post_content10=post_content10+"...";break;
+                                                            }
+                                                        }
+                                                        if(countch===220)
+                                                        {
+                                                            if(post_content.length!==220)
+                                                                    post_content10=post_content10+"...";
+                                                            break;
+                                                        }
+                                                        countch++;
+                                                        
+                                                    }
+                                                    document.getElementById("post_content10").style.display = "block";
+                                                    document.getElementById("post_content10").innerHTML = post_content10;
+                                                }
+                                                document.getElementById("post-meta10").innerHTML='Posted by <b>'+author+'</b> on '+created_on; 
+                                                 
+
+                                        }
+                                        count++;
+                                        offset++;
+                                    }                       
+
+                                }
+                                offset_times--;
+                                count--;
+                                //offset=offset_times*limit;
+                                console.log("offset_times="+offset_times);
+                                console.log("offset="+offset);
+                                document.getElementById("read1").onclick=function()
+                                {   document.cookie='post_id='+post_id1;
+                                    location.href="/singlepost";
+                                }
+                                document.getElementById("read2").onclick=function(){document.cookie='post_id='+post_id2;location.href="/singlepost";}
+                                document.getElementById("read3").onclick=function(){document.cookie='post_id='+post_id3;location.href="/singlepost";}
+                                document.getElementById("read4").onclick=function(){document.cookie='post_id='+post_id4;location.href="/singlepost";}
+                                document.getElementById("read5").onclick=function(){document.cookie='post_id='+post_id5;location.href="/singlepost";}
+                                document.getElementById("read6").onclick=function(){document.cookie='post_id='+post_id6;location.href="/singlepost";}
+                                document.getElementById("read7").onclick=function(){document.cookie='post_id='+post_id7;location.href="/singlepost";}
+                                document.getElementById("read8").onclick=function(){document.cookie='post_id='+post_id8;location.href="/singlepost";}
+                                document.getElementById("read9").onclick=function(){document.cookie='post_id='+post_id9;location.href="/singlepost";}
+                                document.getElementById("read10").onclick=function(){document.cookie='post_id='+post_id10;location.href="/singlepost";
+                            
+                        }
+                            }
+                            
+                            document.getElementById("newerposts").innerHTML="Newer Posts &rarr;";
+                            document.getElementById("olderposts").innerHTML=" &larr; Older Posts";    
+                        }
+                        else 
+                        { 
+                                console.log(this.responseText);
+                                alert("Error in loading");
+                                document.getElementById("newerposts").innerHTML="Newer Posts &rarr;";
+                                document.getElementById("olderposts").innerHTML=" &larr; Older Posts";
+                        }
+                }               
+            }     
+            request.open('POST', "https://data.predawn45.hasura-app.io/v1/query", true);
+            request.setRequestHeader('Content-type','application/json');
+            request.setRequestHeader('Authorization','Bearer '+ auth_token);
+            request.withCredentials=true;
+            request.send(JSON.stringify({      type:"select",
+                                                args:{  table:"posts",
+                                                        columns:   [    "post_id",
+                                                                        "post_title",
+                                                                        "post_caption",
+                                                                        "post_content",
+                                                                        "created_on",
+                                                                        {   "name": "gud",
+                                                                            "columns": ["username"]
+                                                                        }
+                                                                    ],
+                                                                    order_by :"-created_on",
+                                                                    limit: limit,
+                                                                    offset:offset
+                                                                }
+                                                    })
+                                        ); 
+            document.getElementById("newerposts").innerHTML="Fetching Newer posts...";
+        }
+            };
+        
+        }
+        });
+    </script>
+
+</body>
+
+</html>
